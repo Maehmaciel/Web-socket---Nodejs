@@ -1,13 +1,11 @@
-const express = require('express')();
-
-
-const http = require('http').Server(express);
-
+const porta=process.env.PORT || 3003
+const express =require('express')
+const app=express()
+const http= require('http').Server(app);
 const serverSocket = require('socket.io')(http);
 
-const porta = process.env.PORT || 8000
-
 const host = process.env.HOST || "http://localhost"
+app.use(express.static(__dirname));
 
 http.listen(porta, function() {
 
@@ -18,7 +16,7 @@ http.listen(porta, function() {
     else console.log('Servidor iniciado. Abra o navegador em ' + host + portaStr);
 });
 
-express.get('/', function(requisicao, resposta) {
+app.get('/', function(requisicao, resposta) {
     resposta.sendFile(__dirname + '/index.html');
 });
 

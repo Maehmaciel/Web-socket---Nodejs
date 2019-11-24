@@ -5,53 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Chat</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: dodgerblue;
-            margin: 0;
-            flex-direction: column;
-        }
-        
-        ul {
-            width: 50vw;
-            height: 50vh;
-            border-radius: 20px;
-            background-color: white;
-            overflow-y: scroll;
-        }
-        
-        div {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .esconde {
-            display: none;
-        }
-        
-        button,
-        input {
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
-        }
-        
-        button {
-            width: 50%;
-        }
-    </style>
 </head>
 
 <body>
     <ul class="esconde" id='messages'></ul>
     <form>
         <div id="nn">
-            Escolha seu nickname: <input type='text' id='nickname' autocomplete="off" /> <button type='submit'>Enviar</button>
+            Nickname: <input type='text' id='nickname' autocomplete="off" /> <button type='submit'>Enviar</button>
         </div>
         <div id="nm" class="esconde">
             Digite uma mensagem: <input type='text' id='msg' autocomplete="off" /> <button type='submit'>Enviar</button>
